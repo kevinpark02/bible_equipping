@@ -1,11 +1,18 @@
 import React from "react";
 import NavbarContainer from "../components/navbar/navbar_container";
+import LoginFormContainer from "./session_form/login_form_container";
+import SignupFormContainer from "./session_form/signup_form_container";
+
+import { Route } from 'react-router-dom';
 
 const App = () => (
   <div>
       <header>
           <NavbarContainer />
       </header>
+
+    <Route exact path="/login" component={LoginFormContainer} />
+    <Route exact path="/signup" component={SignupFormContainer} />
   </div>
 );
 
