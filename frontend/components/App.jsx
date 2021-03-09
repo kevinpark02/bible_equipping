@@ -1,8 +1,11 @@
 import React from "react";
+import NavbarContainer from "../components/navbar/navbar_container";
 
 const App = () => (
   <div>
-    <h1>Welcome To Bible Equipping</h1>
+      <header>
+          <NavbarContainer />
+      </header>
   </div>
 );
 

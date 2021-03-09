@@ -1,3 +1,112 @@
 // Place all the styles related to the api/Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.home-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px black solid;
+    padding: 10px 30px;
+    background: #333
+}
+
+.left-nav {
+    display: flex;
+    align-items: center;
+}
+
+.left-nav h1 {
+    margin-right: 20px;
+}
+
+.auth-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.auth-nav li:first-child {
+    margin-right: 30px;
+}
+
+.title-nav {
+    color: #fff;
+}
+
+.logged-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    border: 1px black solid;
+    padding: 10px 0;
+}
+
+.logged-left {
+    display: flex;
+    margin-left: 20px;
+}
+
+.logged-left div:first-child {
+    margin-right: 20px;
+}
+
+.logged-right {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logged-right p {
+    margin-right: 20px;
+    color: #fff;
+}
+// Navbar - End
+
+// Session Form - Start
+.session-form {
+    border: 1px #989898 solid;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 30%;
+    margin: auto;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    background: #efefef;
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.15);
+}
+
+.session-errors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #ff3333;
+}
+
+.session-form-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.session-form-inputs h4 {
+    margin-bottom: 30px;
+}
+
+.session-form-inputs input {
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.session-form-btn {
+    width: 63%;
+    outline: 0;
+    font-size: 15px;
+}
+
+.session-form-alt {
+    color: blue;
+}
