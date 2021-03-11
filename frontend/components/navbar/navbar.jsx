@@ -8,7 +8,7 @@ const Navbar = ({currentUser, logout}) => {
                 <Link to="/home"><div className="white-btn">Home</div></Link>
             </div>
             <div className="logged-right">
-                <p>Hello, {currentUser.fname} {currentUser.lname}</p>
+                <p>Hello, {currentUser.username}</p>
                 <div onClick={logout} className="yellow-btn">Log Out</div>
             </div>
         </div>
