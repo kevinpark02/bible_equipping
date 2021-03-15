@@ -17,6 +17,14 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 8, allow_nil: true}
     # VALIDATIONS - END
 
+    # ASSOCIATIONS - START
+    has_many :quizzes,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Quiz
+
+    # ASSOCIATIONS - END
+
     # AUTHENTIFICATION METHODS - START
     attr_reader :password
     after_initialize :ensure_session_token
