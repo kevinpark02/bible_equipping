@@ -23,6 +23,11 @@ export const removeSessionErrors = () => ({
   type: REMOVE_SESSION_ERRORS,
 });
 
+export const fetchUser = (user) => (dispatch) => {
+  return ApiUtil.fetchUser(user)
+    .then((user) => dispatch(receiveCurrentUser(user)))
+}
+
 export const login = (user) => (dispatch) => {
   return ApiUtil.login(user).then(
     (user) => dispatch(receiveCurrentUser(user)),
