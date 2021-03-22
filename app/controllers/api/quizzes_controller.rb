@@ -15,7 +15,7 @@ class Api::QuizzesController < ApplicationController
     def update
         @quiz = Quiz.find_by(id: params[:id])
 
-        if @quiz && @quix.update(quiz_params)
+        if @quiz && @quiz.update(quiz_params)
             render :show
         else
             render json: @quiz.errors.full_messages, status: 422

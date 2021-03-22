@@ -1,1 +1,1 @@
-json.partial! 'quiz', quiz: @quiz
+json.extract! @quiz, :id, :book, :score, :user_id
