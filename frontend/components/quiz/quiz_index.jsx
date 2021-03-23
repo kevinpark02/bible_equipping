@@ -1,9 +1,34 @@
 import React from 'react'
+import QuizIndexItem from "./quiz_index_item";
 
-const QuizIndex = () => {
-    return(
-        <h1>This is where</h1>
-    )
+class QuizIndex extends React.Component  {
+    constructor(props) {
+        super(props)
+    }
+
+    componentDidMount() {
+        this.props.fetchUser(this.props.userId)
+    }
+
+    render() {
+        if (!this.props.quizzes === undefined) {
+            return null
+        }
+
+        const quizzes = this.props.quizzes
+        return(
+            <div>
+                <ul>
+                    {quizzes.map(quiz => {
+                        return(
+                            <QuizIndexItem quiz={quiz}
+                                           key={quiz.id}/>
+                        )
+                    })}
+                </ul>
+            </div>
+        )
+    }
 }
 
 export default QuizIndex;
