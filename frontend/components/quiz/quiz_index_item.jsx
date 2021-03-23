@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class QuizIndexItem extends React.Component {
     constructor(props) {
@@ -9,7 +10,9 @@ class QuizIndexItem extends React.Component {
         const quiz = this.props.quiz;
         return(
             <div>
-                <li>{quiz.book}</li>
+                <Link to={`/quizzes/${quiz.id}`}>
+                    <li>{quiz.book}</li>
+                </Link>
             </div>
         )
     }

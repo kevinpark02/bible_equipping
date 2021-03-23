@@ -19,6 +19,7 @@ const App = () => (
 
     <ProtectedRoute exact path="/home" component={CreateQuizFormContainer}/>
     <ProtectedRoute exact path="/home" component={QuizIndexContainer}/>
+    <ProtectedRoute exact path="/quizzes/:quizId"/>
   </div>
 );
 
