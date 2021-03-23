@@ -14,3 +14,8 @@ export const createQuiz = (quiz) => (dispatch) => {
     .then((quiz) => dispatch(receiveQuiz(quiz))
   );
 };
+
+export const fetchQuiz = (quizId) => (dispatch) => {
+  return QuizApiUtil.fetchQuiz(quizId)
+    .then(quiz => dispatch(receiveQuiz(quiz)))
+}

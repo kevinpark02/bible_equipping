@@ -1,4 +1,8 @@
-json.partial! 'quiz', quiz: @quiz
+json.quiz do
+    json.set! @quiz.id do
+        json.partial! 'quiz', quiz: @quiz
+    end
+end
 
 json.verses do
     @quiz.verses.each do |verse|

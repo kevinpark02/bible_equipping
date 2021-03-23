@@ -5,3 +5,11 @@ export const createQuiz = (quiz) => {
     data: { quiz },
   });
 };
+
+export const fetchQuiz = (quizIde) => {
+  return $.ajax({
+    url: `/api/quizzes/${quizId}`,
+    method: "GET"
+  });
+};
+
