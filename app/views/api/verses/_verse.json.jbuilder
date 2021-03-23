@@ -1,0 +1,1 @@
+json.extract! @verse, :id, :verse, :chapter, :quiz_id
