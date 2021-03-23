@@ -1,6 +1,10 @@
 class Api::QuizzesController < ApplicationController
 
-    before_action :require_logged_in, only: [:create, :update]
+    before_action :require_logged_in, only: [:show, :create, :update]
+
+    def show
+        @quiz = Quiz.includes(:verses).find_by(id: params[:id])
+    end
 
     def create
         @quiz = Quiz.new(quiz_params)
