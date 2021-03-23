@@ -4,6 +4,7 @@ import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
 import CreateQuizFormContainer from "./quiz/create_quiz_form_container";
 import QuizIndexContainer from "./quiz/quiz_index_container";
+import QuizShowContainer from './quiz/quiz_show_container';
 
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
@@ -19,7 +20,7 @@ const App = () => (
 
     <ProtectedRoute exact path="/home" component={CreateQuizFormContainer}/>
     <ProtectedRoute exact path="/home" component={QuizIndexContainer}/>
-    <ProtectedRoute exact path="/quizzes/:quizId"/>
+    <ProtectedRoute exact path="/quizzes/:quizId" component={QuizShowContainer}/>
   </div>
 );
 

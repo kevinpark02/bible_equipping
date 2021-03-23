@@ -6,7 +6,7 @@ export const createQuiz = (quiz) => {
   });
 };
 
-export const fetchQuiz = (quizIde) => {
+export const fetchQuiz = (quizId) => {
   return $.ajax({
     url: `/api/quizzes/${quizId}`,
     method: "GET"

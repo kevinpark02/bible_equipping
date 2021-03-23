@@ -47,7 +47,7 @@ class LoginForm extends React.Component {
       const formType = this.props.formType;
       const linkType = "signup"
       const otherLinkName = "Sign up for an account"
-      const sessionHeading = "Log into Bracketed Tax Engine"
+      const sessionHeading = "Log into Bibel Equipping"
 
       return(
           <div className="session-form">

@@ -1,4 +1,6 @@
 import { RECEIVE_VERSE } from '../actions/verse_actions';
+import { RECEIVE_CURRENT_QUIZ } from "../actions/quiz_actions";
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 const versesReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -6,8 +8,14 @@ const versesReducer = (state = {}, action) => {
     switch(action.type) {
         case RECEIVE_VERSE:
             return Object.assign(nextState, action.verse)
-        case RECEIVE_QUIZ:
-            return Object.assign(nextState, action.quiz.verses)
+        case RECEIVE_CURRENT_QUIZ:
+            if (action.quiz.verses === undefined) {
+                return {}
+            } else {
+                return action.quiz.verses
+            }
+        case LOGOUT_CURRENT_USER:
+            return {}
         default:
             return state;
     }
