@@ -14,6 +14,8 @@ class QuizForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createQuiz(this.state);
+        this.props.fetchVerse('?q=John+3:16')
+            .then((verse) => console.log(verse))
     }
 
     render() {
