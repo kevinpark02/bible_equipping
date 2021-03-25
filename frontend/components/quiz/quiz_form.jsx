@@ -13,9 +13,25 @@ class QuizForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createQuiz(this.state);
-        this.props.fetchVerse('?q=John+3:16')
-            .then((verse) => console.log(verse))
+        const passage = `${this.state.book}+1:1`
+        this.props.createQuiz(this.state)
+            .then((quiz) => 
+                $.ajax({
+                    url: `https://fierce-dawn-41077.herokuapp.com/https://api.esv.org/v3/passage/text/?q=${passage}&include-footnotes=false&include-verse-numbers=false&include-headings=false&include-passage-references=false&indent-paragraphs=0`,
+                    method: "GET",
+                    headers: {
+                        Authorization: `Token ${window.esvAPIKey}`
+                    }
+                })
+            .then(verse => this.props.createVerse(
+                {
+                    "verse": verse.passages[0],
+                    "chapter": 1,
+                    "quiz_id": Object.values(quiz.quiz.quiz)[0].id
+                }
+            ))
+            .then(this.props.history.push(`/quizzes/${Object.values(quiz.quiz.quiz)[0].id}`))
+            );
     }
 
     render() {
