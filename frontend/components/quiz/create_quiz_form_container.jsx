@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createQuiz } from '../../actions/quiz_actions';
+import { fetchQuiz, createQuiz } from '../../actions/quiz_actions';
 import { createVerse } from "../../actions/verse_actions";
 import QuizForm from './quiz_form';
 
@@ -218,6 +218,7 @@ const mapDispatchToProps = (dispatch) => {
     return({
         createQuiz: (quiz) => dispatch(createQuiz(quiz)),
         createVerse: (verse) => dispatch(createVerse(verse)),
+        fetchQuiz: (quizId) => dispatch(fetchQuiz(quizId))
     });
 }
 

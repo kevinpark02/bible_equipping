@@ -49,14 +49,18 @@ class QuizForm extends React.Component {
                     "quiz_id": quizId
                 }
             ))
+            .then(() => this.props.fetchQuiz(quizId))
         }
+        setTimeout(() => {
+           this.props.history.push(`quizzes/${quizId}`) 
+        }, 5000)
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.createQuiz(this.state)
             .then((quiz) => this.makeVerseRefs(Object.values(quiz.quiz.quiz)[0].id))
-            .then(() => this.props.history.push(`/quizzes/${Object.values(quiz.quiz.quiz)[0].id}`))
+            // .then(() => this.props.history.push(`/quizzes/${Object.values(quiz.quiz.quiz)[0].id}`))
     }
 
     render() {
