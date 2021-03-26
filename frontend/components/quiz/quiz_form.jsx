@@ -3,35 +3,60 @@ import React from 'react';
 class QuizForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.quiz
+        this.state = this.props.quiz;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.makeVerseRefs = this.makeVerseRefs.bind(this);
     }
 
     update(field) {
         return e => this.setState({ [field]: e.target.value })
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        const passage = `${this.state.book}+1:1`
-        this.props.createQuiz(this.state)
-            .then((quiz) => 
-                $.ajax({
-                    url: `https://fierce-dawn-41077.herokuapp.com/https://api.esv.org/v3/passage/text/?q=${passage}&include-footnotes=false&include-verse-numbers=false&include-headings=false&include-passage-references=false&indent-paragraphs=0`,
-                    method: "GET",
-                    headers: {
-                        Authorization: `Token ${window.esvAPIKey}`
-                    }
-                })
+    makeVerseRefs(quizId) {
+        let verses = [];
+        let reference = ""
+    
+        const bible = this.props.bible;
+        const book = this.state.book;
+        const chapters = Object.values(bible[book]).length
+
+        while (verses.length < 5) {
+            reference += book + "+";
+            let chapter = Math.floor(Math.random() * Math.floor(chapters)) + 1; 
+            reference += chapter + ":";
+            let verse = Math.floor(Math.random() * Math.floor(bible[book][chapter])) + 1;
+            reference += verse;
+            if (!verses.includes(reference)) {
+                verses.push(reference)
+            }
+            reference = "";
+        }
+        
+        for (let i = 0; i < verses.length; i ++) {
+            let idx1 = verses[i].indexOf("+") + 1;
+            let idx2 = verses[i].indexOf(":")
+            $.ajax({
+                url: `https://fierce-dawn-41077.herokuapp.com/https://api.esv.org/v3/passage/text/?q=${verses[i]}&include-footnotes=false&include-verse-numbers=false&include-headings=false&include-passage-references=false&indent-paragraphs=0`,
+                method: "GET",
+                headers: {
+                    Authorization: `Token ${window.esvAPIKey}`
+                }
+            })
             .then(verse => this.props.createVerse(
                 {
                     "verse": verse.passages[0],
-                    "chapter": 1,
-                    "quiz_id": Object.values(quiz.quiz.quiz)[0].id
+                    "chapter": verses[i].slice(idx1, idx2),
+                    "quiz_id": quizId
                 }
             ))
-            .then(this.props.history.push(`/quizzes/${Object.values(quiz.quiz.quiz)[0].id}`))
-            );
+        }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.createQuiz(this.state)
+            .then((quiz) => this.makeVerseRefs(Object.values(quiz.quiz.quiz)[0].id))
+            .then(() => this.props.history.push(`/quizzes/${Object.values(quiz.quiz.quiz)[0].id}`))
     }
 
     render() {

@@ -12,18 +12,17 @@ class QuizShow extends React.Component {
 
     render() {
         const verses = this.props.verses
-        const quiz = this.props.quiz
-
-        if (verses === undefined || quiz === undefined) {
-            return null;
-        }
         
         return(
-            <div>
+            <ul>
                 {verses.map(verse => {
-                    return verse.verse
+                    return(
+                        <li key={verse.id}>
+                            {verse.verse}
+                        </li>
+                    )
                 })}
-            </div>
+            </ul>
         )
     }
 }
