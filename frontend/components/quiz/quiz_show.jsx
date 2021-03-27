@@ -1,4 +1,5 @@
 import React from 'react';
+import VerseIndexItem from "../../components/verse/verse_index_item";
 
 class QuizShow extends React.Component {
     constructor(props) {
@@ -12,14 +13,15 @@ class QuizShow extends React.Component {
 
     render() {
         const verses = this.props.verses
-        
+        const quiz = this.props.quiz
         return(
             <ul>
                 {verses.map(verse => {
                     return(
-                        <li key={verse.id}>
-                            {verse.verse}
-                        </li>
+                        <VerseIndexItem verse={verse}
+                                        key={verse.id}
+                                        quiz={quiz}
+                                        />
                     )
                 })}
             </ul>
