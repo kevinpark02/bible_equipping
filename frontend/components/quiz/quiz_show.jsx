@@ -15,16 +15,19 @@ class QuizShow extends React.Component {
         const verses = this.props.verses
         const quiz = this.props.quiz
         return(
-            <ul>
-                {verses.map(verse => {
-                    return(
-                        <VerseIndexItem verse={verse}
-                                        key={verse.id}
-                                        quiz={quiz}
-                                        />
-                    )
-                })}
-            </ul>
+            <div>
+                <ul>
+                    {verses.map(verse => {
+                        return(
+                            <VerseIndexItem verse={verse}
+                                            key={verse.id}
+                                            quiz={quiz}
+                                            />
+                        )
+                    })}
+                </ul>
+                <button>Submit Quiz</button>
+            </div>
         )
     }
 }
