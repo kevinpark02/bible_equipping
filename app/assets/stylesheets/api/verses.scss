@@ -4,6 +4,11 @@
 
 .verse-index-item {
     display: flex;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-.verse-index-item 
+.verse-index-item input[type=text] {
+    width: 30px;
+    margin-left: 10px;
+}

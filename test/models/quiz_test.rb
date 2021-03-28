@@ -8,6 +8,7 @@
 #  user_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  submitted  :boolean          default(FALSE)
 #
 require 'test_helper'
 

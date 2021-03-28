@@ -8,9 +8,10 @@
 #  user_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  submitted  :boolean          default(FALSE)
 #
 class Quiz < ApplicationRecord
-    validates :book, :user_id, presence: true
+    validates :book, :user_id, :submitted, presence: true
 
     belongs_to :user,
         primary_key: :id,
