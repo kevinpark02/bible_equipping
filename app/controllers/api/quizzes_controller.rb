@@ -8,7 +8,7 @@ class Api::QuizzesController < ApplicationController
 
     def create
         @quiz = Quiz.new(quiz_params)
-
+        
         if @quiz.save
             render :show
         else
@@ -29,7 +29,7 @@ class Api::QuizzesController < ApplicationController
     private
 
     def quiz_params
-        params.require(:quiz).permit(:book, :score, :user_id)
+        params.require(:quiz).permit(:book, :score, :user_id, :submitted)
     end
 
 end

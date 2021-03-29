@@ -13,3 +13,11 @@ export const fetchQuiz = (quizId) => {
   });
 };
 
+export const updateQuiz = (quiz) => {
+  return $.ajax({
+    url: `/api/quizzes/${quiz.id}`,
+    method: "PATCH",
+    data: {quiz}
+  });
+};
+

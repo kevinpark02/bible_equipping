@@ -16,7 +16,8 @@ class VerseIndexItem extends React.Component {
 
     render() {
         const verse = this.props.verse;
-        console.log(verse.chapter)
+        const quiz = this.props.quiz;
+
         return(
             <div className="verse-index-item">
                 <li>{verse.verse}</li>

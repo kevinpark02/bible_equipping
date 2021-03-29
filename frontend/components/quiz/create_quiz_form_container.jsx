@@ -7,7 +7,8 @@ const mapStateToProps = (state) => {
     return({
         quiz: {
             book: "",
-            user_id: state.session.id
+            user_id: state.session.id,
+            // submitted: "false"
         },
         bible: {
             Genesis: {
