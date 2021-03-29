@@ -14,3 +14,8 @@ export const createVerse = (verse) => (dispatch) => {
     return VerseApiUtil.createVerse(verse)
         .then((verse) => dispatch(receiveVerse(verse)));
 };
+
+export const updateVerse = (verse) => (dispatch) => {
+    return VerseApiUtil.updateVerse(verse)
+        .then((verse) => dispatch(receiveVerse(verse)));
+};
