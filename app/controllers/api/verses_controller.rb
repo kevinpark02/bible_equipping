@@ -11,9 +11,19 @@ class Api::VersesController < ApplicationController
         end
     end
 
+    def update
+        @verse = Verse.find_by(id: params[:id])
+
+        if @verse && @verse.update(verse_params)
+            render :show
+        else
+            render json: @verse.errors.full_messages, status: 422
+        end
+    end
+
     private
 
     def verse_params
-        params.require(:verse).permit(:verse, :chapter, :quiz_id)
+        params.require(:verse).permit(:verse, :chapter, :quiz_id, :answer)
     end
 end
