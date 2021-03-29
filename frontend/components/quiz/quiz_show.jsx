@@ -4,7 +4,10 @@ import VerseIndexItem from "../../components/verse/verse_index_item";
 class QuizShow extends React.Component {
     constructor(props) {
         super(props)
-
+        this.state = {
+            id: this.props.quizId,
+            submitted: true
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -13,9 +16,9 @@ class QuizShow extends React.Component {
             .then(this.props.fetchQuiz(this.props.quizId))
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
         e.preventDefault();
-        
+        this.props.updateQuiz(this.state);
     }
 
     render() {
@@ -33,7 +36,7 @@ class QuizShow extends React.Component {
                         )
                     })}
                 </ul>
-                <button onChange={this.handleSubmit}>Submit Quiz</button>
+                <button onClick={this.handleSubmit}>Submit Quiz</button>
             </div>
         )
     }
