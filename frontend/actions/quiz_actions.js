@@ -25,5 +25,12 @@ export const createQuiz = (quiz) => (dispatch) => {
 
 export const fetchQuiz = (quizId) => (dispatch) => {
   return QuizApiUtil.fetchQuiz(quizId)
-    .then(quiz => dispatch(receiveCurrentQuiz(quiz)))
-}
+    .then(quiz => dispatch(receiveCurrentQuiz(quiz))
+  );
+};
+
+export const updateQuiz = (quiz) => (dispatch) => {
+  return QuizApiUtil.updateQuiz(quiz)
+    .then(quiz => dispatch(receiveQuiz(quiz))
+  );
+};
