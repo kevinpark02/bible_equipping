@@ -27,17 +27,21 @@ class VerseIndexItem extends React.Component {
 
         const correctAnswer = quiz.submitted ? 
             (verse.answer === verse.chapter) ? 
-                <p>Correct!</p> : 
-                <p>Incorrect {verse.chapter}</p> :
+                <p className="verse-cor-incor">Correct! You put {verse.answer}</p> : 
+                <p className="verse-cor-incor">Incorrect. You put {verse.answer}, but it's {verse.chapter}</p> :
                 null;
+
+        const answerInput = quiz.submitted ? 
+            null :
+            <input type="text"
+                value={this.state.answer}
+                onChange={this.update}
+            />
 
         return(
             <div className="verse-index-item">
                 <li>{verse.verse}</li>
-                <input type="text"
-                       value={this.state.answer}
-                       onChange={this.update}
-                       />
+                {answerInput}
                 {correctAnswer}
             </div>
         )
