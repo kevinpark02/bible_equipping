@@ -7,7 +7,10 @@ const versesReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_VERSE:
-            return Object.assign(nextState, action.verse)
+            // debugger
+            nextState[action.verse.id] = action.verse
+            return nextState
+            // return Object.assign(nextState, action.verse)
         case RECEIVE_CURRENT_QUIZ:
             if (action.quiz.verses === undefined) {
                 return {}

@@ -32,6 +32,7 @@ class QuizShow extends React.Component {
                             <VerseIndexItem verse={verse}
                                             key={verse.id}
                                             quiz={quiz}
+                                            updateVerse={this.props.updateVerse}
                                             />
                         )
                     })}
