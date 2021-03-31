@@ -16,18 +16,25 @@ class QuizShow extends React.Component {
             .then(this.props.fetchQuiz(this.props.quizId))
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.updateQuiz(this.state);
+    handleSubmit(count) {
+        let nextState = Object.assign({}, this.state);
+        nextState["score"] = count;
+        this.props.updateQuiz(nextState)
+            .then(() => this.props.history.push(`/home`));
     }
+
 
     render() {
         const verses = this.props.verses
         const quiz = this.props.quiz
+        let count = 0;
         return(
             <div>
                 <ul>
                     {verses.map(verse => {
+                        if (verse.chapter === verse.answer) {
+                            count += 1
+                        }
                         return(
                             <VerseIndexItem verse={verse}
                                             key={verse.id}
@@ -37,7 +44,7 @@ class QuizShow extends React.Component {
                         )
                     })}
                 </ul>
-                <button onClick={this.handleSubmit}>Submit Quiz</button>
+                <button onClick={() => this.handleSubmit(count)}>Submit Quiz</button>
             </div>
         )
     }

@@ -7,7 +7,6 @@
     flex-direction: column;
     align-items: center;
     width: 80%;
-    border: 1px black solid;
     margin: 0 auto;
     margin-top: 20px;
 }
@@ -19,9 +18,23 @@
     margin-bottom: 30px;
 }
 
+.quiz-list-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz-header p:first-of-type {
+    width: 125px;
+}
+
 .quiz-list {
-    border: 1px black solid;
-    width: 30%;
+    width: 100%;
 }
 
 .quiz-line-item {

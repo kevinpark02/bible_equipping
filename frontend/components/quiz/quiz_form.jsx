@@ -60,7 +60,6 @@ class QuizForm extends React.Component {
         e.preventDefault();
         this.props.createQuiz(this.state)
             .then((quiz) => this.makeVerseRefs(Object.values(quiz.quiz.quiz)[0].id))
-            // .then(() => this.props.history.push(`/quizzes/${Object.values(quiz.quiz.quiz)[0].id}`))
     }
 
     render() {

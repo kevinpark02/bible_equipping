@@ -20,7 +20,8 @@ class QuizIndexItem extends React.Component {
                         {quiz.book}
                     </li>
                 </Link>
-                <p>5</p>
+                <p className="quiz-score">{quiz.score} / 5</p>
+                <p className="quiz-percentage">{Math.round((quiz.score / 5) * 1000) / 10}%</p>
                 {this.dateFormat(quiz.created_at)}
             </div>
         )
