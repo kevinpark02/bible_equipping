@@ -27,8 +27,8 @@ class VerseIndexItem extends React.Component {
 
         const correctAnswer = quiz.submitted ? 
             (verse.answer === verse.chapter) ? 
-                <p className="verse-cor-incor">Correct! You put {verse.answer}</p> : 
-                <p className="verse-cor-incor">Incorrect. You put {verse.answer}, but it's {verse.chapter}</p> :
+                <p className="verse-cor">Correct! You put {verse.answer}</p> : 
+                <p className="verse-incor">Incorrect. You put {verse.answer}, but it's {verse.chapter}</p> :
                 null;
 
         const answerInput = quiz.submitted ? 

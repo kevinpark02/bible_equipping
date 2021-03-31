@@ -29,7 +29,7 @@ class QuizShow extends React.Component {
         const quiz = this.props.quiz
         let count = 0;
         return(
-            <div>
+            <div className="quiz-questions-container">
                 <ul>
                     {verses.map(verse => {
                         if (verse.chapter === verse.answer) {
@@ -44,7 +44,10 @@ class QuizShow extends React.Component {
                         )
                     })}
                 </ul>
-                <button onClick={() => this.handleSubmit(count)}>Submit Quiz</button>
+                <button onClick={() => this.handleSubmit(count)}
+                        className="green-btn">
+                    Submit Quiz
+                </button>
             </div>
         )
     }

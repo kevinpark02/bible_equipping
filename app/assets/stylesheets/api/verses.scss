@@ -4,7 +4,8 @@
 
 .verse-index-item {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 15px;
 }
 
@@ -13,6 +14,10 @@
     margin-left: 10px;
 }
 
-.verse-cor-incor {
-    margin-left: 10px;
+.verse-cor {
+    color: #2E8B57
+}
+
+.verse-incor {
+    color: #ff4d4d;
 }
