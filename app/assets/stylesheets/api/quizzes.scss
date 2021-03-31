@@ -1,3 +1,34 @@
 // Place all the styles related to the api/quizzes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.quiz-index-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    border: 1px black solid;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.quiz-create-form {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    margin-bottom: 30px;
+}
+
+.quiz-list {
+    border: 1px black solid;
+    width: 30%;
+}
+
+.quiz-line-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz-line-item li {
+    width: 125px;
+}

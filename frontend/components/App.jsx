@@ -17,9 +17,10 @@ const App = () => (
 
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
-
-    <ProtectedRoute exact path="/home" component={CreateQuizFormContainer}/>
-    <ProtectedRoute exact path="/home" component={QuizIndexContainer}/>
+    <div className="quiz-index-page">
+      <ProtectedRoute exact path="/home" component={CreateQuizFormContainer}/>
+      <ProtectedRoute exact path="/home" component={QuizIndexContainer}/>
+    </div>
     <ProtectedRoute exact path="/quizzes/:quizId" component={QuizShowContainer}/>
   </div>
 );

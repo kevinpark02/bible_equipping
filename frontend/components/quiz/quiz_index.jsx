@@ -17,8 +17,7 @@ class QuizIndex extends React.Component  {
 
         const quizzes = this.props.quizzes
         return(
-            <div>
-                <ul>
+                <ul className="quiz-list">
                     {quizzes.map(quiz => {
                         return(
                             <QuizIndexItem quiz={quiz}
@@ -26,7 +25,6 @@ class QuizIndex extends React.Component  {
                         )
                     })}
                 </ul>
-            </div>
         )
     }
 }

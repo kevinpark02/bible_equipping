@@ -137,7 +137,7 @@ class QuizForm extends React.Component {
                     <option value="Jude">Jude</option>
                     <option value="Revelation">Revelation</option>
                 </select>
-                <input className="quiz-generate-btn" type="submit" value="Generate a Quiz"/>
+                <input className="quiz-generate-btn green-btn" type="submit" value="Generate a Quiz"/>
             </form>
         )
     }

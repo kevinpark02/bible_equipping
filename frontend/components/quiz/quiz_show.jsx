@@ -24,15 +24,10 @@ class QuizShow extends React.Component {
     render() {
         const verses = this.props.verses
         const quiz = this.props.quiz
-        let count = 0;
         return(
             <div>
-                {count}
                 <ul>
                     {verses.map(verse => {
-                        if (verse.chapter === verse.answer) {
-                            count += 1;
-                        }
                         return(
                             <VerseIndexItem verse={verse}
                                             key={verse.id}
