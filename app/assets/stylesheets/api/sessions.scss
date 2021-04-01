@@ -2,19 +2,70 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .app {
-    background-image: url("https://source.unsplash.com/1600x900/?bible");
-    background-size: cover;
+    position: relative;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+}
+
+.app::before {
+    content: "";
+    background-image: url("https://source.unsplash.com/x_jAYPjskYI");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.65;
+    z-index: -100;
 }
 
 .home-nav {
-    border: 1px black solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 30px;
 }
 
 .home-nav li {
     text-align: center;
+}
+
+.auth-nav {
+    display: flex;
+}
+
+.signup-btn {
+    margin-right: 30px;
+    border: 3px white solid;
+    padding: 7px 15px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.signup-btn:hover {
+    border: 3px #333 solid;
+    background: #fff;
+    color: #333;
+    transition: 1s all ease;
+    border-radius: 2px;
+}
+
+.gen-btn {
+    border: 3px white solid;
+    padding: 7px 15px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.gen-btn:hover {
+    border: 3px #333 solid;
+    background: #fff;
+    color: #333;
+    transition: 1s all ease;
+    border-radius: 2px;
 }
 
 .left-nav {

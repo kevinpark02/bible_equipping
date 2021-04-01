@@ -15,7 +15,6 @@ const App = () => (
       <header>
           <NavbarContainer />
       </header>
-    <Route exact path="/" component={Homepage} />
 
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
