@@ -53,7 +53,7 @@ class QuizForm extends React.Component {
         }
         setTimeout(() => {
            this.props.history.push(`quizzes/${quizId}`) 
-        }, 5000)
+        }, 1000)
     }
 
     handleSubmit(e) {
