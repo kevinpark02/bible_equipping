@@ -19,11 +19,20 @@
     margin-bottom: 30px;
 }
 
+.quiz-book-options {
+    border-radius: 10px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
 .quiz-list-container {
     display: flex;
     flex-direction: column;
     width: 50%;
     max-width: 640px;
+    padding: 20px 30px;
+    background: #ffffffD9;
+    border: 1px white solid;
 }
 
 .quiz-header {
@@ -61,4 +70,8 @@
     margin: 0 auto;
     width: 60%;
     max-width: 895px;
+    padding: 20px 30px;
+    background: #ffffffD9;
+    border: 1px white solid;
+    margin-bottom: 30px;
 }

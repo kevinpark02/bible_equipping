@@ -16,10 +16,6 @@
     border-bottom: 1px solid black;
 }
 
-.verse-answer-input {
-    
-}
-
 .verse-index-item input[type=text] {
     width: 30px;
     margin-top: 10px;
@@ -50,11 +46,12 @@
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     background: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    width: 100%;
+    max-width: 895px;
+    font-size: 10px;
+    margin-top: 20px;
 }

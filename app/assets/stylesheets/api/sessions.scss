@@ -2,22 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .app {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-}
-
-.app::before {
-    content: "";
     background-image: url("https://source.unsplash.com/x_jAYPjskYI");
     background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.65;
+    background-repeat: no-repeat;
+    overflow-x: auto;
+    overflow-y: auto;
+    position: fixed;
     z-index: -100;
+    height: 100vh;
+    width: 100vw;
 }
 
 .home-nav {

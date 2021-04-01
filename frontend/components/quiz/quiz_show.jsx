@@ -46,7 +46,7 @@ class QuizShow extends React.Component {
                     })}
                 </ul>
                 <button onClick={() => this.handleSubmit(count)}
-                        className="green-btn">
+                        className="dark-btn">
                     Submit Quiz
                 </button>
                 <div className="footer">
