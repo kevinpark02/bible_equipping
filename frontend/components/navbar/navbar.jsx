@@ -9,7 +9,7 @@ const Navbar = ({currentUser, logout}) => {
             </div>
             <div className="logged-right">
                 <p>Hello, {currentUser.username}</p>
-                <div onClick={logout} className="yellow-btn">Log Out</div>
+                <div onClick={logout} className="white-btn">Log Out</div>
             </div>
         </div>
     ) : (
@@ -18,7 +18,7 @@ const Navbar = ({currentUser, logout}) => {
                 <Link to="/"><h1 className="title-nav">Bible Equipping</h1></Link>
             </div>
             <div className="auth-nav">
-                <Link to="/signup"><li className="white-btn">Sign Up</li></Link>
+                <Link to="/signup"><li className="signup-btn white-btn">Sign Up</li></Link>
                 <Link to="/login"><li className="yellow-btn">Log In</li></Link>
             </div>
         </div>

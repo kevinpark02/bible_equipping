@@ -14,16 +14,14 @@ class QuizIndexItem extends React.Component {
     render() {
         const quiz = this.props.quiz;
         return(
-            <div className="quiz-line-item">
-                <Link to={`/quizzes/${quiz.id}`}>
-                    <li>
-                        {quiz.book}
-                    </li>
-                </Link>
-                <p className="quiz-score">{quiz.score} / 5</p>
-                <p className="quiz-percentage">{Math.round((quiz.score / 5) * 1000) / 10}%</p>
-                {this.dateFormat(quiz.created_at)}
-            </div>
+            <Link to={`/quizzes/${quiz.id}`}>
+                <div className="quiz-line-item">
+                    <li>{quiz.book}</li>
+                    <p className="quiz-score">{quiz.score} / 5</p>
+                    <p className="quiz-percentage">{Math.round((quiz.score / 5) * 1000) / 10}%</p>
+                    {this.dateFormat(quiz.created_at)}
+                </div>
+            </Link>
         )
     }
 }

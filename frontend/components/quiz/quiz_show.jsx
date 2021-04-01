@@ -31,12 +31,13 @@ class QuizShow extends React.Component {
         return(
             <div className="quiz-questions-container">
                 <ul>
-                    {verses.map(verse => {
+                    {verses.map((verse, idx) => {
                         if (verse.chapter === verse.answer) {
                             count += 1
                         }
                         return(
                             <VerseIndexItem verse={verse}
+                                            qnum={idx}
                                             key={verse.id}
                                             quiz={quiz}
                                             updateVerse={this.props.updateVerse}
@@ -48,6 +49,9 @@ class QuizShow extends React.Component {
                         className="green-btn">
                     Submit Quiz
                 </button>
+                <div className="footer">
+                    Scripture quotations marked “ESV” are from the ESV® Bible (The Holy Bible, English Standard Version®), copyright © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. You may not copy or download more than 500 consecutive verses of the ESV Bible or more than one half of any book of the ESV Bible.
+                </div>
             </div>
         )
     }
