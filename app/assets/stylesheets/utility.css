@@ -53,6 +53,61 @@
     font-size: 16px;  
 }
 
+.signup-btn {
+    margin-right: 30px;
+    border: 3px white solid;
+    border-radius: 5px;
+    padding: 7px 15px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: 1s all ease;
+}
+
+.signup-btn:hover {
+    border: 3px #989898 solid;
+    background: #fff;
+    color: #333;
+    transition: 1s all ease;
+    border-radius: 7px;
+}
+
+.gen-btn {
+    border: 3px white solid;
+    border-radius: 5px;
+    padding: 7px 15px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: 1s all ease;
+}
+
+.gen-btn:hover {
+    border: 3px #989898 solid;
+    background: #fff;
+    color: #333;
+    transition: 1s all ease;
+    border-radius: 7px;
+}
+
+.dark-btn {
+    border: 3px #fff solid;
+    border-radius: 5px;
+    background: #000000BF;
+    padding: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: 1s all ease;
+}
+
+.dark-btn:hover {
+    border: 3px black solid;
+    border-radius: 7px;
+    transition: 1s all ease;
+    background: #efefef;
+    color: black;
+}
+
 /* Inputs */
 
 input[type="text"] {

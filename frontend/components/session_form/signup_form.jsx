@@ -75,7 +75,7 @@ class SignupForm extends React.Component {
                                 onChange={this.handleInput('password')}
                                 className="input-fields"/>
 
-                        <input type="submit" value={formType} className ="yellow-btn session-form-btn"/>
+                        <input type="submit" value={formType} className ="dark-btn session-form-btn"/>
 
                         <Link className="session-form-alt" to={`/${linkType}`}>{otherLinkName}</Link>
                   </div>

@@ -35,38 +35,6 @@
     display: flex;
 }
 
-.signup-btn {
-    margin-right: 30px;
-    border: 3px white solid;
-    padding: 7px 15px;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-}
-
-.signup-btn:hover {
-    border: 3px #333 solid;
-    background: #fff;
-    color: #333;
-    transition: 1s all ease;
-    border-radius: 2px;
-}
-
-.gen-btn {
-    border: 3px white solid;
-    padding: 7px 15px;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-}
-
-.gen-btn:hover {
-    border: 3px #333 solid;
-    background: #fff;
-    color: #333;
-    transition: 1s all ease;
-    border-radius: 2px;
-}
 
 .left-nav {
     display: flex;
@@ -85,8 +53,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #333;
-    border: 1px black solid;
     padding: 10px 0;
 }
 
@@ -111,24 +77,16 @@
 }
 // Navbar - End
 
-// Homepage - Start
-
-.homepage-splash {
-    
-}
-
-// Homepage - End
-
 // Session Form - Start
 .session-form {
     border: 1px #989898 solid;
-    border-radius: 10px;
+    border-radius: 2px;
     max-width: 400px;
     width: 30%;
     margin: auto;
     margin-top: 50px;
     padding-bottom: 20px;
-    background: #efefef;
+    background: #ffffffD9;
     box-shadow: 0 3px 8px 0 rgba(0,0,0,0.15);
 }
 
@@ -149,6 +107,16 @@
     align-items: center;
 }
 
+.session-form-inputs input[type=text] {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.session-form-inputs input[type=password] {
+    font-size: 16px;
+    padding: 5px;
+}
+
 .session-form-inputs h4 {
     margin-bottom: 30px;
 }
@@ -161,7 +129,7 @@
 .session-form-btn {
     width: 63%;
     outline: 0;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .session-form-alt {

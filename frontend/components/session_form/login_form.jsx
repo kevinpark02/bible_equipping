@@ -47,7 +47,7 @@ class LoginForm extends React.Component {
       const formType = this.props.formType;
       const linkType = "signup"
       const otherLinkName = "Sign up for an account"
-      const sessionHeading = "Log into Bibel Equipping"
+      const sessionHeading = "Log into Bible Equipping"
 
       return(
           <div className="session-form">
@@ -68,7 +68,7 @@ class LoginForm extends React.Component {
                                 onChange={this.handleInput('password')}
                                 className="input-fields"/>
                 
-                        <input type="submit" value={formType} className ="yellow-btn session-form-btn"/>
+                        <input type="submit" value={formType} className ="dark-btn session-form-btn"/>
 
                         <Link className="session-form-alt" to={`/${linkType}`}>{otherLinkName}</Link>
                   </div>
