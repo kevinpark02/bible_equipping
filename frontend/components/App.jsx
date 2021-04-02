@@ -1,5 +1,5 @@
 import React from "react";
-import Homepage from "../components/home/Homepage";
+import HomepageContainer from "../components/home/Homepage_container";
 import NavbarContainer from "../components/navbar/navbar_container";
 import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
@@ -16,7 +16,7 @@ const App = () => (
           <NavbarContainer />
       </header>
     
-    <Route exact path="/" component={Homepage}/>
+    <Route exact path="/" component={HomepageContainer}/>
 
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />

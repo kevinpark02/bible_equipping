@@ -5,17 +5,23 @@ class Homepage extends React.Component {
         super(props)
     }
 
-    componentDidMount(){
-        debugger
-        // while (this.props.home) {
-        //     setTimeout(() => this.props.fetchPsalm(), 3000)
-        //     setTimeout(() => this.props.fetchIsaiah(), 3000)
-        //     setTimeout(() => this.props.fetchProverbs(), 3000)
-        // }
+    switchVerse(ref) {
+        if (ref === "psalm") {
+            setTimeout(() => {
+                this.props.fetchIsaiah()
+            }, 5000)
+        } else if (ref === "isaiah") {
+            setTimeout(() => {
+                this.props.fetchProverbs()
+            }, 5000)
+        } else {
+            setTimeout(() => {
+                this.props.fetchPsalm()
+            }, 5000)
+        }
     }
 
     render() {
-        // debugger
         const splash = this.props.splash;
 
         const verse = splash === "psalm" ?
@@ -36,11 +42,21 @@ class Homepage extends React.Component {
                     - Isaiah 40:8 -
                 </div>
             </div> : 
-            null       
+            splash === "proverbs" ?
+            <div className="homepage-title-border">
+                <div className="homepage-verse">
+                    "For the Lord gives wisdom; from his mouth come knowledge and understanding"
+                </div>
+                <div className="homepage-reference">
+                    - Proverbs 2:6 -
+                </div>
+            </div> : 
+            null;
 
         return(
             <div>
                 {verse}
+                {this.switchVerse(splash)}
             </div>
         )
     }
