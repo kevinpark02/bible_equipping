@@ -1,20 +1,23 @@
-// import { RECEIVE_VERSE, START_RECEIVE_VERSE } from "../actions/verse_actions";
+import { RECEIVE_PSALM, RECEIVE_ISAIAH, RECEIVE_PROVERBS } from "../actions/home_actions";
 
-// const initialState = {
-//     verseMaking: false
-// };
+const initialState = {
+    home: true,
+    splash: "psalm"
+};
 
-// const loadingReducer = (state = initialState, action) => {
-//     Object.freeze(state);
+const loadingReducer = (state = initialState, action) => {
+    Object.freeze(state);
 
-//     switch (action.type) {
-//         case RECEIVE_VERSE:
-//             return Object.assign({}, state, { verseMaking: false });
-//         case START_RECEIVE_VERSE:
-//             return Object.assign({}, state, { verseMaking: true });
-//         default:
-//             return state;
-//     }
-// };
+    switch (action.type) {
+        case RECEIVE_PSALM:
+            return Object.assign({}, state, { splash: "psalm" });
+        case RECEIVE_ISAIAH:
+            return Object.assign({}, state, { splash: "isaiah" });
+        case RECEIVE_PROVERBS:
+            return Object.assign({}, state, { splash: "proverbs" });
+        default:
+            return state;
+    }
+};
 
-// export default loadingReducer;
+export default loadingReducer;

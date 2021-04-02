@@ -8,7 +8,6 @@ const mapStateToProps = (state) => {
         quiz: {
             book: "",
             user_id: state.session.id,
-            // submitted: "false"
         },
         bible: {
             Genesis: {

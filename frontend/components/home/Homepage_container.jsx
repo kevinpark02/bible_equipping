@@ -1,22 +1,21 @@
 import { connect } from 'react-redux';
+import { fetchPsalm, fetchIsaiah, fetchProverbs } from "../../actions/home_actions";
 import Homepage from "./Homepage";
 
 const mapStateToProps = (state) => {
     return({
-        currentUser: state.session.id,
-        psalm: {
-            verse: "Your word is a lamp to my feet and a light to my path (Psalm 119:105)",
-            ref: "Psalm 119:105"
-        },
-        isaiah: {
-            verse: "The grass withers, the flower fades, but the word of our God will stand forever",
-            ref: "Isaiah 40:8"
-        },
-        proverbs: {
-            verse: "For the Lord gives wisdom; from his mouth come knowledge and understanding",
-            ref: "Proverbs 2:6"
-        }
+        home: state.ui.loading.home,
+        splash: state.ui.loading.splash,
     });
 };
 
-export default connect(mapStateToProps, null)(Homepage);
+const mapDispatchToProps = (dispatch) => {
+    return({
+        fetchPsalm: () => dispatch(fetchPsalm()),
+        fetchIsaiah: () => dispatch(fetchIsaiah()),
+        fetchProverbs: () => dispatch(fetchProverbs()),
+
+    })
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
