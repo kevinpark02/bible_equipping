@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
         quizId: ownProps.match.params.quizId,
         verses: Object.values(state.entities.verses),
         userId: state.session.id,
+        loading: state.ui.loading.verseMaking
     });
 };
 
