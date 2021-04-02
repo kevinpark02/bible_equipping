@@ -47,10 +47,10 @@
   box-sizing: border-box;
 }
 .cover.turn {
-  animation: bookCover 3s forwards;
+  animation: bookCover 6s forwards;
 }
 .page.turn {
-  animation: bookOpen 3s forwards;
+  animation: bookOpen 6s forwards;
 }
 .page:nth-of-type(1) {
   animation-delay: 0.05s;
@@ -62,15 +62,15 @@
   animation-delay: 0.66s;
 }
 .page:nth-of-type(4) {
-  animation: bookOpen150deg 3s forwards;
+  animation: bookOpen150deg 6s forwards;
   animation-delay: 0.99s;
 }
 .page:nth-of-type(5) {
-  animation: bookOpen30deg 3s forwards;
+  animation: bookOpen30deg 6s forwards;
   animation-delay: 1.2s;
 }
 .page:nth-of-type(6) {
-  animation: bookOpen55deg 3s forwards;
+  animation: bookOpen55deg 6s forwards;
   animation-delay: 1.25s;
 }
 @keyframes bookOpen {
