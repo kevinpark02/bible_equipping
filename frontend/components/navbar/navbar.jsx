@@ -5,11 +5,11 @@ const Navbar = ({currentUser, logout}) => {
     const greeting = currentUser ? (
         <div className="logged-nav">
             <div className="logged-left">
-                <Link to="/home"><div className="gen-btn">Home</div></Link>
+                <Link to="/home"><div className="gen-btn">HOME</div></Link>
             </div>
             <div className="logged-right">
                 <p>Hello, {currentUser.username}</p>
-                <div onClick={logout} className="gen-btn">Log Out</div>
+                <div onClick={logout} className="gen-btn">LOG OUT</div>
             </div>
         </div>
     ) :     

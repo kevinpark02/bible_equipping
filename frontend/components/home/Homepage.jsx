@@ -9,15 +9,15 @@ class Homepage extends React.Component {
         if (ref === "psalm") {
             setTimeout(() => {
                 this.props.fetchIsaiah()
-            }, 5000)
+            }, 7000)
         } else if (ref === "isaiah") {
             setTimeout(() => {
                 this.props.fetchProverbs()
-            }, 5000)
+            }, 7000)
         } else {
             setTimeout(() => {
                 this.props.fetchPsalm()
-            }, 5000)
+            }, 7000)
         }
     }
 

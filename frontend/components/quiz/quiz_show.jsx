@@ -14,7 +14,7 @@ class QuizShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchUser(this.props.userId)
-            .then(this.props.fetchQuiz(this.props.quizId))
+            .then(() => this.props.fetchQuiz(this.props.quizId))
     }
 
     handleSubmit(count) {
