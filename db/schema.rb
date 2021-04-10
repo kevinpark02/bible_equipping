@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_224304) do
+ActiveRecord::Schema.define(version: 2021_04_10_170912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "collections", force: :cascade do |t|
+    t.string "book", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book"], name: "index_collections_on_book", unique: true
+  end
 
   create_table "quizzes", force: :cascade do |t|
     t.string "book", null: false
@@ -22,6 +29,8 @@ ActiveRecord::Schema.define(version: 2021_03_29_224304) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "submitted", default: false, null: false
+    t.integer "collection_id", null: false
+    t.index ["collection_id"], name: "index_quizzes_on_collection_id"
     t.index ["user_id"], name: "index_quizzes_on_user_id"
   end
 

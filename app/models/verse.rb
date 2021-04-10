@@ -8,6 +8,7 @@
 #  quiz_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  answer     :integer
 #
 class Verse < ApplicationRecord
     validates :verse, :chapter, :quiz_id, presence: true

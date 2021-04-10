@@ -2,13 +2,14 @@
 #
 # Table name: quizzes
 #
-#  id         :bigint           not null, primary key
-#  book       :string           not null
-#  score      :integer
-#  user_id    :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  submitted  :boolean          default(FALSE)
+#  id            :bigint           not null, primary key
+#  book          :string           not null
+#  score         :integer
+#  user_id       :integer          not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  submitted     :boolean          default(FALSE), not null
+#  collection_id :integer          not null
 #
 class Quiz < ApplicationRecord
     # validates :book, :user_id, :submitted, presence: true
@@ -23,4 +24,9 @@ class Quiz < ApplicationRecord
         primary_key: :id,
         foreign_key: :quiz_id,
         class_name: :Verse
+
+    belongs_to :collection,
+        primary_key: :id,
+        foreign_key: :collection_id,
+        class_name: :Collection
 end
