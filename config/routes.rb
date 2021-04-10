@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :create]
     resources :quizzes, only: [:show, :create, :update]
     resources :verses, only: [:create, :update]
+    resources :collections, only: [:create]
 
     resource :session, only: [:create, :destroy]
   end
