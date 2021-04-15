@@ -25,8 +25,8 @@ class Quiz < ApplicationRecord
         foreign_key: :quiz_id,
         class_name: :Verse
 
-    belongs_to :collection,
-        primary_key: :id,
-        foreign_key: :collection_id,
-        class_name: :Collection
+    # belongs_to :collection,
+    #     primary_key: :id,
+    #     foreign_key: :collection_id,
+    #     class_name: :Collection
 end
