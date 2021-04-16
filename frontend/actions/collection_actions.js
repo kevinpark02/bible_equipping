@@ -25,7 +25,7 @@ export const createCollection = (collection) => (dispatch) => {
 
 export const fetchCollection = (collectionId) => (dispatch) => {
     return CollectionApiUtil.fetchCollection(collectionId)
-        .then((collection) => dispatch(receiveCurrentCollection(colection))
+        .then((collection) => dispatch(receiveCurrentCollection(collection))
     );
 };
 
