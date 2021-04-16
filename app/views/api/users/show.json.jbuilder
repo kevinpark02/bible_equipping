@@ -7,3 +7,11 @@ json.quizzes do
         end
     end
 end
+
+json.collections do 
+    @user.collections.each do |collection|
+        json.set! collection.id do
+            json.extract! collection, :id, :book, :user_id
+        end
+    end
+end

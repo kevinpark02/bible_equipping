@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
     def show
-        @user = User.includes(:quizzes).find_by(id: params[:id])
+        @user = User.includes(:quizzes, :collections).find_by(id: params[:id])
     end
 
     def create
