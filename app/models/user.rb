@@ -23,6 +23,11 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Quiz
 
+    has_many :collections,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Collection
+
     # ASSOCIATIONS - END
 
     # AUTHENTIFICATION METHODS - START
