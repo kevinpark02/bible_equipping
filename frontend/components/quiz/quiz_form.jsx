@@ -20,7 +20,7 @@ class QuizForm extends React.Component {
         const book = this.state.book;
         const chapters = Object.values(bible[book]).length
 
-        while (verses.length < 5) {
+        while (verses.length < 10) {
             reference += book + "+";
             let chapter = Math.floor(Math.random() * Math.floor(chapters)) + 1; 
             reference += chapter + ":";
