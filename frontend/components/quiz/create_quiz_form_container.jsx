@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchQuiz, createQuiz } from '../../actions/quiz_actions';
 import { createVerse } from "../../actions/verse_actions";
-import { createCollection } from "../../actions/collection_actions";
 import QuizForm from './quiz_form';
 
 const mapStateToProps = (state) => {
@@ -220,7 +219,6 @@ const mapDispatchToProps = (dispatch) => {
         createQuiz: (quiz) => dispatch(createQuiz(quiz)),
         createVerse: (verse) => dispatch(createVerse(verse)),
         fetchQuiz: (quizId) => dispatch(fetchQuiz(quizId)),
-        createCollection: (collection) => dispatch(createCollection(collection))
     });
 }
 
