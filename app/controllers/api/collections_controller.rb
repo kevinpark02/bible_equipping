@@ -11,7 +11,7 @@ class Api::CollectionsController < ApplicationController
         if @collection.save
             render :show
         else
-            render json: @quiz.errors.full_messages, status: 422
+            render json: @collection.errors.full_messages, status: 422
         end
     end
 

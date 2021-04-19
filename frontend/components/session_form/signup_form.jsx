@@ -27,6 +27,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
+        // .then((user) => this.props.createCollection({book: "Genesis", user_id: user.currentUser.id}))
   }
 
   renderErrors(){

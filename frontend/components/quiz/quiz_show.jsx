@@ -29,7 +29,7 @@ class QuizShow extends React.Component {
         const verses = this.props.verses
         const quiz = this.props.quiz
         let count = 0;
-        if (verses.length < 5) {
+        if (verses.length < 1) {
             return <LoadingIcon />
         }
         return(

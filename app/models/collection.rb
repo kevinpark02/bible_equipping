@@ -9,7 +9,7 @@
 #  user_id    :integer          not null
 #
 class Collection < ApplicationRecord
-    validates :book, :user_id, presence: true, uniqueness: true
+    validates :book, :user_id, presence: true
 
     has_many :quizzes,
         primary_key: :id,

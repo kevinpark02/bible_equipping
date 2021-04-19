@@ -20,7 +20,7 @@ class QuizForm extends React.Component {
         const book = this.state.book;
         const chapters = Object.values(bible[book]).length
 
-        while (verses.length < 10) {
+        while (verses.length < 1) {
             reference += book + "+";
             let chapter = Math.floor(Math.random() * Math.floor(chapters)) + 1; 
             reference += chapter + ":";
@@ -60,6 +60,7 @@ class QuizForm extends React.Component {
         e.preventDefault();
         this.props.createQuiz(this.state)
             .then((quiz) => this.makeVerseRefs(Object.values(quiz.quiz.quiz)[0].id))
+            .then(() => this.props.createCollection(this.state))
     }
 
     render() {

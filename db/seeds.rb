@@ -9,6 +9,7 @@
 User.delete_all
 Quiz.delete_all
 Verse.delete_all
+Collection.delete_all
 
 # User seed
     u1 = User.create(email: "kevin.park02@gmail.com", username: "kpark02", password: "test1234")
