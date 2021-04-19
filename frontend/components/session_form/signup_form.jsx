@@ -11,6 +11,7 @@ class SignupForm extends React.Component {
       errors: this.props.errors
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.createCollections = this.createCollections.bind(this)
   }
 
   componentDidMount() {
@@ -23,11 +24,86 @@ class SignupForm extends React.Component {
       };
   }
 
+  createCollections(userId) {
+      let books = [
+                    'Genesis',
+                    'Exodus',
+                    'Leviticus',
+                    'Numbers',
+                    'Deuteronomy',
+                    'Joshua',
+                    'Judges',
+                    'Ruth',
+                    '1 Samuel',
+                    '2 Samuel',
+                    '1 Kings',
+                    '2 Kings',
+                    '1 Chronicles',
+                    '2 Chronicles',
+                    'Ezra',
+                    'Nehemiah',
+                    'Esther',
+                    'Job',
+                    'Psalm',
+                    'Proverbs',
+                    'Ecclesiastes',
+                    'Song of Solomon',
+                    'Isaiah',
+                    'Jeremiah',
+                    'Lamentations',
+                    'Ezekiel',
+                    'Daniel',
+                    'Hosea',
+                    'Joel',
+                    'Amos',
+                    'Obadiah',
+                    'Jonah',
+                    'Micah',
+                    'Nahum',
+                    'Habakkuk',
+                    'Zephaniah',
+                    'Haggai',
+                    'Zechariah',
+                    'Malachi',
+                    'Matthew',
+                    'Mark',
+                    'Luke',
+                    'John',
+                    'Acts',
+                    'Romans',
+                    '1 Corinthians',
+                    '2 Corinthians',
+                    'Galatians',
+                    'Ephesians',
+                    'Philippians',
+                    'Colossians',
+                    '1 Thessalonians',
+                    '2 Thessalonians',
+                    '1 Timothy',
+                    '2 Timothy',
+                    'Titus',
+                    'Philemon',
+                    'Hebrews',
+                    'James',
+                    '1 Peter',
+                    '2 Peter',
+                    '1 John',
+                    '2 John',
+                    '3 John',
+                    'Jude',
+                    'Revelation'
+                ];
+        for (let i = 0; i < books.length; i++) {
+            this.props.createCollection({book: books[i], user_id: userId })
+        }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
         // .then((user) => this.props.createCollection({book: "Genesis", user_id: user.currentUser.id}))
+        .then((user) => this.createCollections(user.currentUser.id))
   }
 
   renderErrors(){
