@@ -6,7 +6,8 @@ const collectionsReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_COLLECTION:
-            return Object.assign(nextState, action.collection)
+            nextState[action.collection.id] = action.collection
+            return nextState;
         case RECEIVE_CURRENT_COLLECTION: 
             return action.collection
         case RECEIVE_CURRENT_USER:

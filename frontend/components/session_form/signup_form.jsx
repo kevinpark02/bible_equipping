@@ -94,15 +94,17 @@ class SignupForm extends React.Component {
                     'Revelation'
                 ];
         for (let i = 0; i < books.length; i++) {
-            this.props.createCollection({book: books[i], user_id: userId })
+            setTimeout(() => {
+                this.props.createCollection({book: books[i], user_id: userId })
+            }, 3000)
         }
+
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-        // .then((user) => this.props.createCollection({book: "Genesis", user_id: user.currentUser.id}))
         .then((user) => this.createCollections(user.currentUser.id))
   }
 
