@@ -6,7 +6,7 @@ const Navbar = ({currentUser, logout}) => {
         <div className="logged-nav">
             <div className="logged-left">
                 <Link to="/home"><div className="gen-btn">HOME</div></Link>
-                <Link to="/progress"><div className="gen-btn">COLLECTION</div></Link>
+                <Link to="/collection"><div className="gen-btn">COLLECTION</div></Link>
             </div>
             <div className="logged-right">
                 <p>Hello, {currentUser.username}</p>
